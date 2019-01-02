@@ -1,0 +1,154 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 80px;
+  background-color: rgb(255, 230, 160);
+}
+
+.btn-dark {
+  padding: 5px;
+  border-radius: 0px;
+  position: absolute;
+  right: 20px;
+}
+
+.btn-warning {
+  padding: 5px;
+  border-radius: 0px;
+  background-color: #FCCE4E;
+}
+
+.btn-latest {
+  background-color: black;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+
+.card a:not([href]):not([tabindex]).scrape-new {
+  color: #FCCE4E;
+}
+
+.card-columns {
+  margin: 20px;
+  margin-top: 10px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  color: white;
+  background-color: #FCCE4E;
+}
+
+.navbar {
+  margin-bottom: 0;
+  background-color: #FCCE4E;
+}
+
+
+.article-container {
+  padding-bottom: 25px;
+}
+
+.card {
+  border-radius: 0;
+  box-shadow: 0px;
+  margin: 20px 0;
+}
+
+.card .card-header {
+  background-color: #FCCE4E;
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.card .card-header h3 {
+  color: white;
+}
+
+.card .card-header .btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.card .card-header .btn.delete {
+  right: 160px;
+}
+
+.card .card-body {
+  font-size: 16px;
+}
+
+.card .card-header .article-link {
+  color: white;
+  display: inline-block;
+  width: 80%;
+}
+
+.footer > .container > p {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  margin: 0;
+  font-weight: 800;
+  background: #FCCE4E;
+}
+
+.navbar-nav > li > a.scrape-new,
+.navbar-nav > li > a.clear {
+  padding: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  font-weight: 800;
+  color: white;
+}
+
+nav.navbar {
+  background-color: #FCCE4E;
+}
+
+.navbar-nav > li > a.scrape-new:hover,
+.navbar-nav > li > a.clear:hover {
+  background: #4caf50;
+}
+
+.navbar-nav > li > a.scrape-new:active {
+  background: #e51c23;
+}
+
+.scrape-new {
+  cursor: pointer;
+}
+
+.m-top-80 {
+  margin-top: 80px;
+}
+
+textarea {
+  padding: 10px;
+  resize: none;
+  width: 100%;
+}
+
+.bootbox-body .btn {
+  float: right;
+  margin: 5px;
+}
+
+.note.list-group-item .btn {
+  position: relative;
+  bottom: 10px;
+}
