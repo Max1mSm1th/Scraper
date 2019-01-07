@@ -8,6 +8,11 @@ body {
 	color: #fff;
 	background-color: #47AD8C;
 	border-width: 0px;
+	position: absolute;
+	z-index: -4;
+	width: 200px;
+	bottom: 70px;
+	right: 80px;
 }
 
 .artLink {
