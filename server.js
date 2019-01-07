@@ -1,42 +1,34 @@
-// Web Scraper Homework Solution Example
-// (be sure to watch the video to see
-// how to operate the site in the browser)
-// -/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
-
-// Require our dependencies
 var express = require("express");
+var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 var exphbs = require("express-handlebars");
+var Note = require("./models/Note.js");
+var Article = require("./models/Article.js");
 
-// Set up our port to be either the host's designated port, or 3000
-var PORT = process.env.PORT || 3000;
+mongoose.Promise = Promise;
 
-// Instantiate our Express App
 var app = express();
+  app.use(bodyParser.urlencoded({
+    extended: false
+  }));
+  app.use(express.static(process.cwd() + "/public"));
 
-// Require our routes
-var routes = require("./routes");
 
-// Parse request body as JSON
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-// Make public a static folder
-app.use(express.static("public"));
+// CONNECTING TO MONGODB
 
-// Connect Handlebars to our Express app
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+mongoose.connect(MONGODB_URI);
+
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-// Have every request go through our route middleware
-app.use(routes);
+var router = express.Router();
 
-// If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+  require("./config/routes")(router);
+  app.use(router);
 
-// Connect to the Mongo DB
-mongoose.connect(MONGODB_URI);
+var port = process.env.PORT || 3000;
 
-// Listen on the port
-app.listen(PORT, function() {
-  console.log("Listening on port: " + PORT);
-});
+  app.listen(port, function() {
+    console.log("app running on port " + port);
+  });

@@ -1,17 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
+	
 <head>
-  <title>Snopes Scraper</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.0.0/materia/bootstrap.min.css"/>
-  <link href="https://fonts.googleapis.com/css?family=Cormorant+SC" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/style.css">
+	<meta charset="UTF-8">
+	<title>CES 2019 | NEWS SCRAPER</title>
+       	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto%7CRoboto+Slab" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>	
 </head>
 
-<body>
-  {{{ body }}}
-</body>
+	<body>
+		<img src="https://cdn.ces.tech/ces/media/logos-and-icons/ces-logo.png" class="photo" width="400px">
+			<form class="navbar-form navbar-left" action="/api/fetch" method="get">
+				<button class="btn scrape"><i class="fas fa-download"></i></button>
+			</form>
+		<nav class="navbar navbar-default">
+		<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="/">CES 2019 | NEWS SCRAPER</a>
+		</div>
+		<ul class="nav navbar-nav">
+		<li class="active"><a href="/">ARTICLES</i><span class="sr-only"></span></a></li>
+		<li><a id="saved" href="/saved">SAVED</i></i></a></li>
+		</div>
+		</nav>
 
+		{{{ body }}}
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+	<script src="assets/js/app.js"></script>
+
+	</body>
+	
 </html>

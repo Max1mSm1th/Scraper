@@ -1,75 +1,62 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="/">Mongo Scraper</a>
-  <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false"
-    aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<!-- EVERY SAVED ARTICLE GETS A TITLE, SUMMARY, LINK, AND TWO BUTTONS FOR COMMENTING AND DELETING -->   
 
-  <div class="collapse navbar-collapse" id="navbarColor01">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="/">Home
-          <span class="sr-only">(current)</span>
-        </a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="/saved">Saved Articles
-          <span class="sr-only">(current)</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="btn btn-danger clear">CLEAR ARTICLES!</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-<div class="jumbotron text-center">
-  <div class="overlay">
-  </div>
-  <div class="background-image">
-  </div>
-  <div class="caption">
-    <h1>Saved Articles</h1>
-    <p>Your Saved Articles</p>
-  </div>
-</div>
-<div class="container-fluid article-container">
-  {{#each articles}}
-    <div data-_id={{this._id}} class="card">
-      <div class="card-header">
-        <h3>
-          <a class="article-link" target="_blank" rel="noopener noreferrer" href="{{this.url}}">{{this.headline}}</a>
-          <a class="btn btn-danger delete">Delete From Saved</a>
-          <a class="btn btn-info notes">Article Notes</a>
-        </h3>
-      </div>
-      <div class="card-body">{{this.summary}}</div>
+<div class="savedArt articles">
+<ul>
+    
+    {{#each articles }}
+    
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">{{title}}</h3>
+        </div>
+        <div class="panel-body">
+
+<!-- THE SUMMARY ALSO ACTS AS THE LINK TO THE OFFICIAL ARTICLE -->
+
+            <a class="artLink" href={{link}}>{{summary}}</a>
+            <button data-id={{_id}} class="btn btn-danger pull-right removeSaved"><i class="far fa-trash-alt"></i></button>
+            <button data-id={{_id}} class="btn btn-primary pull-right saved-buttons"  id="addCheckNote" data-toggle="modal" data-target="#noteModal" data-value="{{this._id}}"><i class="far fa-comments"></i></button>
+        </div>
     </div>
-  {{/each}}
-  {{#unless articles.length}}
-    <div class="alert alert-warning text-center">
-      <h4>You haven't saved any articles!</h4>
+<br>
+<br>
+
+<!-- USER CAN PULL UP COMMENTS BOX FOR EACH ARTICLE SAVED -->
+      
+<div id="noteModal" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="noteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    
+    <div class="modal-header">
+        <h4 class="modal-title" id=""><b>COMMENTS</b></h4>
+        <div>
+            <ul id="notesBody">
+            </ul>
+        </div>
     </div>
-    <div class="card">
-      <div class="card-header text-center">
-        <h3>Would You Like to Browse Available Articles?</h3>
-      </div>
-      <div class="card-body text-center">
-        <h4>
-          <a href="/">Browse Articles</a>
-        </h4>
-      </div>
+
+<!-- SECTION POPS UP FOR USER TO ADD A COMMENT -->
+    
+    <div class="modal-body">
+    <div class="form-group">
+        <label for="exampleTextarea">Post a new comment...</label>
+        <textarea class="form-control" id="notestext" rows="3"></textarea>
     </div>
-  {{/unless}}
+    </div>
+
+<!-- FOOTER FOR POSTING COMMENT OR EXITING OUT OF THE COMMENTS SECTION -->
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger exit-button" data-dismiss="modal"><i class="fas fa-times"></i></button>
+        <button data-id={{_id}}  data-dismiss="modal" id="saveButton" class="btn btn-primary savenote"><i class="fas fa-arrow-right"></i></button>
+    </div>
+
+    </div>
+    </div>
 </div>
 
-<footer class="footer">
-  <div class="container">
-    <p>New York Times Mongo Scraper</p>
-  </div>
-</footer>
+    {{/each}}
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
-<script src="/assets/javascript/saved.js"></script>
+</ul>
+
+</div>

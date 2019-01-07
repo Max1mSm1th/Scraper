@@ -1,0 +1,20 @@
+<!-- EACH ARTICLE COLLECTED GETS ITS OWN PANEL WITH A TITLE, LINK, AND SUMMARY. AS WELL AS A LINK FOR SAVING THE ARTICLE -->
+
+<div class="articles container">
+
+    {{#each articles }}
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{title}}</h3>
+      <button data-id={{_id}} class="btn btn-danger pull-right save-article"><i class="far fa-bookmark"></i></button>
+    </div>
+    <div class="panel-body">
+      <a class="artLink" href="http://news.google.com/{{link}}">{{summary}}</a>
+    </div>
+  </div>
+  <br>
+  <br>
+  
+  {{/each}}
+</div>
