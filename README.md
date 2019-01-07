@@ -3,6 +3,7 @@
 In this assignment, we were instructed to create a web app that lets users view and leave comments on the latest news. I chose to develop a web app that highlighted the most recent CES news, using Mongoose and Cheerio to scrape the Google News site.
 
 
+
 // APP OVERVIEW
 
 Whenever a user visits your site, the app should scrape stories from a news outlet of your choice and display them for the user. Each scraped article should be saved to your application database. At a minimum, the app should scrape and display the following information for each article:
