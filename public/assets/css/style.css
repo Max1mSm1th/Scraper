@@ -6,8 +6,8 @@ body {
 
 .alert-warning {
 	color: #fff;
-	background-color: #722b2b;
-	border-color: #722b2b;
+	background-color: #47AD8C;
+	border-width: 0px;
 }
 
 .artLink {
@@ -53,12 +53,6 @@ body {
 
 h1, h2, h3, h4 {
 	font-family: 'Roboto Slab', serif;
-}
-
-.main-img {
-	margin-bottom: 2em;
-	border-top: 2px solid #3f3535;
-	border-bottom: 2px solid #3f3535;
 }
 
 .modal-body{
